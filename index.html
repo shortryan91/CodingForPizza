@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coding for pizza</title>
+    <!-- <link rel="stylesheet" href="CSS/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="CSS/style.css">
+  </head>
+  <body>
+    <header>
+      <h1 id="navHeading">Coding For PIZZA</h1>
+      <nav>
+        <ul class="navBar">
+        <li>Home</li>
+        <li>GameRules</li>
+        <li>Contact</li>
+      </ul>
+     </nav>
+   </header>
+   <div class="mainpage">
+     <!--  Welcome page-->
+    <section class="welcomePage">
+      <button class="loginBtn" type="button" name="button">Login</button>
+      <button class="SumbitBtn" type="button" name="button">Enter Game</button>
+    </section>
+      <!-- end Welcome page -->
+
+      <!-- start enter player infomation -->
+    <div class="playerInfoPage">
+      <h1 id="PlayerInfoHeading">Enter your infomation</h1>
+      <div class="playerInfoBox">
+        <p>player 1</p>
+        <input type="text" name="" value="">
+        <p>player 2</p>
+        <input type="text">
+        <button id="submitPlayerBtn">Submit Players</button>
+      </div>
+    </div>
+      <!-- end of player info -->
+
+      <!-- start game rules -->
+    <div class="gameRulesPage">
+      <h1 class="gameRulesHeading">Game Rules</h1>
+      <section class="gameRulesBox">
+        <p></p>
+      </section>
+    </div>
+    <!-- end of game Rules -->
+
+    <!-- start of the game Page -->
+      <div id="gamePage">
+        <h1>LET'S PLAY</h1>
+        <div><p id="player1">player 1 : <span id="player1Score">0</span> slices</p></div>
+        <div><p id="player2">player 2 : <span id="player2Score">0</span> slices</p></div>
+        <p></p>
+        <div class="questionContainer">
+          <p class="question"></p>
+        </div>
+        <ul class="possibeAnswers">
+          <li class="answer"></li>
+          <li class="answer"></li>
+          <li class="answer"></li>
+          <li class="answer"></li>
+        </ul>
+      </div>
+    <!-- end of the game page-->
+
+    <!-- start of winner Page  -->
+      <div class="winnnerPage">
+        <h1 class="winnerHeading">WINNER</h1>
+        <h3>Wins the Pizza!</h3>
+        <div>
+          <img src="" alt="pizza">
+        </div>
+      </div>
+    <!-- End of winner page -->
+
+  <!-- start contact page  -->
+    <div class="contactpage">
+      <h1 class="contactHeading">Contact</h1>
+      <ul class="meadiaTitles">
+        <li>Facebook</li>
+        <li>Twitter</li>
+        <li>Linkedin</li>
+        <li>instagram</li>
+      </ul>
+      <ul class="social">
+  		<li><a href="#"><i class="fa fa-facebook" target="_blank"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter" target="_blank"></i></a></li>
+			<li><a href="#"><i class="fa fa-linkedin" target="_blank"></i></a></li>
+			<li><a href="#"><i class="fa fa-instagram" target="_blank"></i></a></li>
+	</ul>
+    </div>
+    <!-- end contact page -->
+    <script type="text/javascript" src="main.js">
+
+    </script>
+    </div>
+  </body>
+</html>
