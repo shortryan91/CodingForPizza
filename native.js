@@ -39,7 +39,6 @@ var currentPlayer = player1;
 var player1 = 0;
 var player2 = 0;
 var winningScore = 3;
-var usedQuestions = [];
 
 
 
@@ -56,9 +55,12 @@ var genRand = function() {
   return index;
 }
 
-var captureQuestions = function() {
-  // 
-
+var captureQuestions = function(randomNumber) {
+  var usedQuestions = [];
+  // splicing out the object from the questions array.
+  var questionObject = questions.splice(randomNumber,1)
+  // push the item item to the new array.
+    usedQuestions.push(questionObject);
 }
 
 var loadQuestion = function(randomNumber) {
@@ -88,8 +90,8 @@ var nextQuestion = function(questionIndex) {
   // find the current selected answer using the classList
   var choiceSelected = getElement('.selected').textContent;
   var currentAnswer = questions[questionIndex].answer
-
   if(currentAnswer === choiceSelected) {
+    captureQuestions(questionIndex);
     questionIndex = genRand();
     loadQuestion(questionIndex);
     loadChoices(questionIndex);
@@ -116,6 +118,7 @@ var rand = genRand();
 nextQBtn.addEventListener('click', function(){
 // pass nextQuestion inside that function
   rand = nextQuestion(rand)
+
 });
 
 loadQuestion(rand);
