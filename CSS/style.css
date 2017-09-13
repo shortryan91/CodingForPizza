@@ -1,0 +1,147 @@
+body {
+  box-sizing: border-box;
+}
+
+p{
+ color: black;
+ font-size: 20px;
+}
+
+.selected {
+  color: green;
+  border: 2px solid green;
+
+}
+
+.mainpage {
+  background-image: url(../img/backgroundImage.jpeg);
+}
+
+/*header*/
+header {
+  border: 2px black solid;
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+}
+
+#navHeading {
+  margin-left: 20px;
+  display: inline-block;
+  width: 40%;
+}
+
+.navBar {
+  display: inline-block;
+  width: 40%;
+  height: 150px;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 10%;
+  font-size: 19px;
+}
+/*end of header*/
+
+/*welcome page*/
+.welcomePage {
+  display: none;
+  height: 500px;
+}
+
+ .loginBtn{
+   display: inline-block;
+   font-size: 50px;
+   margin-left: 25%;
+   margin-top: 20%;
+ }
+
+.sumbitBtn {
+  display: inline-block;
+  font-size: 50px;
+  margin-left: 20%;
+}
+
+/*end of welcome page*/
+
+/*start game page*/
+#gamePage {
+  display: block;
+
+}
+
+h1 {
+  color: white;
+}
+
+#player1, #player2 {
+  display: inline-block;
+  width: 30%;
+  
+}
+
+.questionContainer {
+  border: 2px solid white;
+  display: inline-block;
+  width: 45%;
+  background-color: white;
+  border-radius: 7px;
+  height: 200px;
+  margin: 20px;
+}
+
+ #possibe {
+  display: inline-block;
+  width: 30%;
+  /*border: 2px solid white;*/
+  /*background-color: white;*/
+  vertical-align: top;
+}
+
+.answer {
+  /*border: 2px solid black;*/
+  margin-bottom: 7px;
+  border-radius: 6px;
+  background-color: white;
+  list-style: none;
+  text-align: center;
+  font-size: 30px;
+}
+
+#countdown {
+  color: white;
+  font-size: 50px;
+  display: inline-block;
+}
+
+
+
+
+/*end game page*/
+
+/*player info page*/
+.playerInfoPage {
+  display: none;
+}
+/*end of player info page*/
+
+/*concat page*/
+.contactpage {
+  display: none;
+}
+/*end of contact page*/
+
+/*winner page*/
+.winnnerPage {
+  display: none;
+}
+/*end of winner page*/
+
+/*game rules*/
+.gameRulesPage{
+  display: none;
+}
+
+/*end of game rules*/

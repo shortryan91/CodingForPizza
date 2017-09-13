@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Coding for pizza</title>
     <!-- <link rel="stylesheet" href="CSS/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
       <h1 id="navHeading">Coding For PIZZA</h1>
-      <nav>
-        <ul class="navBar">
+      <nav class="navBar">
+        <ul>
         <li>Home</li>
         <li>GameRules</li>
         <li>Contact</li>
@@ -22,7 +22,7 @@
      <!--  Welcome page-->
     <section class="welcomePage">
       <button class="loginBtn" type="button" name="button">Login</button>
-      <button class="SumbitBtn" type="button" name="button">Enter Game</button>
+      <button class="sumbitBtn" type="button" name="button">Enter Game</button>
     </section>
       <!-- end Welcome page -->
 
@@ -51,18 +51,21 @@
     <!-- start of the game Page -->
       <div id="gamePage">
         <h1>LET'S PLAY</h1>
-        <div><p id="player1">player 1 : <span id="player1Score">0</span> slices</p></div>
-        <div><p id="player2">player 2 : <span id="player2Score">0</span> slices</p></div>
-        <p></p>
+        <div id="player1"><p>player 1 : <span id="player1Score">0</span> slices</p></div>
+        <div  id="player2"><p>player 2 : <span id="player2Score">0</span> slices</p></div>
+        <div id="countdown">10</div>
         <div class="questionContainer">
           <p class="question"></p>
         </div>
-        <ul class="possibeAnswers">
-          <li class="answer"></li>
-          <li class="answer"></li>
-          <li class="answer"></li>
-          <li class="answer"></li>
-        </ul>
+        <div id="possibe">
+          <ul class="answers">
+            <li class="answer">s</li>
+            <li class="answer">s</li>
+            <li class="answer">s</li>
+            <li class="answer">s</li>
+          </ul>
+            <button class="nextQuestionBtn">next Question</button>
+        </div>
       </div>
     <!-- end of the game page-->
 
@@ -93,9 +96,8 @@
 	</ul>
     </div>
     <!-- end contact page -->
-    <script type="text/javascript" src="main.js">
-
-    </script>
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+    <script src="native.js"></script>
     </div>
   </body>
 </html>
