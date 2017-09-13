@@ -14,7 +14,7 @@ var questions = [{
 },{
   question:'web pages are bulit using ?',
   choices:['FTP', 'HTTP', 'HTML', 'URL'],
-  answer: 'URL'
+  answer: 'HTML'
 },{
   question:'In What year was HTML first Proposed?',
   choices:['1990', '1985','2000', '1995'],
@@ -25,13 +25,6 @@ var questions = [{
   answer: '<html>'
 }];
 
-
-var currentQuestion = 0;
-var player1 = 0;
-var player2 = 0;
-var allQuestions = questions.length;
-
-
 var getElement = function(elem) {
   var element = document.querySelector(elem);
   return element;
@@ -41,6 +34,15 @@ var getAllElements = function(elements) {
   return elements;
 }
 
+var currentQuestion = 0;
+var currentPlayer = player1;
+var player1 = 0;
+var player2 = 0;
+var winningScore = 3;
+var usedQuestions = [];
+
+
+
 var questionArea = getElement('.question');
 var answerBoxes = getAllElements('.answer');
 var nextQBtn = getElement('.nextQuestionBtn');
@@ -48,9 +50,15 @@ var nextQBtn = getElement('.nextQuestionBtn');
 
 
 
-var questionIndex = function() {
+var genRand = function() {
+  var allQuestions = questions.length;
   var index = Math.round(Math.random()*(allQuestions -1));
   return index;
+}
+
+var captureQuestions = function() {
+  // 
+
 }
 
 var loadQuestion = function(randomNumber) {
@@ -63,9 +71,6 @@ var loadChoices = function(questionIndex) {
   var options = questions[questionIndex].choices;
     answerBoxes.forEach(function(elem, index){
       elem.textContent = options[index];
-    });
-    // adds eventlistener to add a class
-    answerBoxes.forEach(function(elem){
       elem.addEventListener('click', function(){
         // clear all selected
         answerBoxes.forEach(function(li) {
@@ -73,19 +78,45 @@ var loadChoices = function(questionIndex) {
         });
         // select one i click
         elem.classList.add('selected');
-        // store/update answer
-        var storedAnswer = elem.textContent;
       });
     });
-
-
-}
-
-var nextQuestion = function() {
-  var choiceSelected =
 }
 
 
-var rand = questionIndex();
+
+var nextQuestion = function(questionIndex) {
+  // find the current selected answer using the classList
+  var choiceSelected = getElement('.selected').textContent;
+  var currentAnswer = questions[questionIndex].answer
+
+  if(currentAnswer === choiceSelected) {
+    questionIndex = genRand();
+    loadQuestion(questionIndex);
+    loadChoices(questionIndex);
+  } else if (currentAnswer !== choiceSelected){
+    console.log('nope');
+  }
+  return questionIndex;
+}
+
+
+var Winner = function() {
+  if (player1 === winningScore) {
+    console.log('player1 winner');
+    // display the winner screen for player 1
+  } else if (player2 === winningScore) {
+    console.log('player2 winner');
+    // display the winner screen for player 2
+  }
+}
+
+
+var rand = genRand();
+// addEventListener for next button
+nextQBtn.addEventListener('click', function(){
+// pass nextQuestion inside that function
+  rand = nextQuestion(rand)
+});
+
 loadQuestion(rand);
 loadChoices(rand);
