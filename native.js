@@ -1,6 +1,6 @@
 
 var questions = [{
-  question:'The downCase method belongs to which language?',
+  question:'The downcase method belongs to which language?',
   choices:['Ruby','Javascript','Python','C++'],
   answer: 'Ruby'
 },{
@@ -35,19 +35,48 @@ var getAllElements = function(elements) {
 }
 
 var currentQuestion = 0;
-var currentPlayer = player1;
-var player1 = 0;
-var player2 = 0;
+var currentPlayer = 'player 1 ';
+var player1Score = 0;
+var player2Score = 0;
 var winningScore = 3;
 
 
-
+var gamePage = getElement('#gamePage');
+var winnerPage = getElement('.winnerPage');
 var questionArea = getElement('.question');
 var answerBoxes = getAllElements('.answer');
 var nextQBtn = getElement('.nextQuestionBtn');
+// grabs the values of the players id's
+var player1Name = getElement('#player1').textContent;
+var player2Name = getElement('#player2').textContent;
+// grabs the 0 in each players box for scoring
+var player1Count = getElement('#player1Score');
+var player2Count = getElement('#player2Score');
 
 
 
+
+var switchPlayer = function() {
+  if(player1Name === currentPlayer) {
+    currentPlayer = player2Name;
+    // console.log('player 2')
+  } else if (currentPlayer === player2Name){
+    currentPlayer = player1Name;
+    // console.log('player 1')
+  }
+  return currentPlayer;
+};
+
+
+var gameScores = function() {
+  if (currentPlayer === player1Name){
+  player1Score ++;
+  player1Count.textContent = player1Score;
+  } else if (currentPlayer === player2Name) {
+  player2Score ++;
+  player2Count.textContent = player2Score;
+  }
+}
 
 var genRand = function() {
   var allQuestions = questions.length;
@@ -91,24 +120,31 @@ var nextQuestion = function(questionIndex) {
   var choiceSelected = getElement('.selected').textContent;
   var currentAnswer = questions[questionIndex].answer
   if(currentAnswer === choiceSelected) {
+
+    gameScores();
+    winner();
+    switchPlayer();
     captureQuestions(questionIndex);
     questionIndex = genRand();
     loadQuestion(questionIndex);
     loadChoices(questionIndex);
   } else if (currentAnswer !== choiceSelected){
-    console.log('nope');
+    switchPlayer();
+
   }
   return questionIndex;
 }
 
 
-var Winner = function() {
-  if (player1 === winningScore) {
-    console.log('player1 winner');
+var winner = function() {
+  if (player1Score === winningScore) {
     // display the winner screen for player 1
-  } else if (player2 === winningScore) {
-    console.log('player2 winner');
+    gamePage.style.display = 'none';
+    winnerPage.style.display = 'block';
+  } else if (player2Score === winningScore) {
     // display the winner screen for player 2
+    gamePage.style.display = 'none';
+    winnerPage.style.display = 'block';
   }
 }
 
@@ -117,6 +153,7 @@ var rand = genRand();
 // addEventListener for next button
 nextQBtn.addEventListener('click', function(){
 // pass nextQuestion inside that function
+
   rand = nextQuestion(rand)
 
 });

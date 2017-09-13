@@ -14,7 +14,9 @@ p{
 }
 
 .mainpage {
-  background-image: url(../img/backgroundImage.jpeg);
+  background-image: url('http://il9.picdn.net/shutterstock/videos/2401118/thumb/1.jpg?i10c=img.resize(height:72)');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /*header*/
@@ -47,7 +49,7 @@ nav ul li {
 
 /*welcome page*/
 .welcomePage {
-  display: none;
+  display: block;
   height: 500px;
 }
 
@@ -68,7 +70,7 @@ nav ul li {
 
 /*start game page*/
 #gamePage {
-  display: block;
+  display: none;
 
 }
 
@@ -79,7 +81,13 @@ h1 {
 #player1, #player2 {
   display: inline-block;
   width: 30%;
-  
+
+}
+
+.nameBox {
+  background-color: white;
+  display: inline-block;
+  width: 30%;
 }
 
 .questionContainer {
@@ -134,7 +142,7 @@ h1 {
 /*end of contact page*/
 
 /*winner page*/
-.winnnerPage {
+.winnerPage {
   display: none;
 }
 /*end of winner page*/

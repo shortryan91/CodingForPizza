@@ -51,9 +51,15 @@
     <!-- start of the game Page -->
       <div id="gamePage">
         <h1>LET'S PLAY</h1>
-        <div id="player1"><p>player 1 : <span id="player1Score">0</span> slices</p></div>
-        <div  id="player2"><p>player 2 : <span id="player2Score">0</span> slices</p></div>
-        <div id="countdown">10</div>
+        <div class="nameBox">
+          <p id="player1">player 1 </p><p>:
+          <span id="player1Score">0</span> slices</p>
+        </div>
+        <div class="nameBox">
+          <p id="player2">player 2</p><p> :
+          <span id="player2Score">0</span> slices</p>
+        </div>
+        <!-- <div id="countdown">10</div> -->
         <div class="questionContainer">
           <p class="question"></p>
         </div>
@@ -70,7 +76,7 @@
     <!-- end of the game page-->
 
     <!-- start of winner Page  -->
-      <div class="winnnerPage">
+      <div class="winnerPage">
         <h1 class="winnerHeading">WINNER</h1>
         <h3>Wins the Pizza!</h3>
         <div>
