@@ -160,3 +160,11 @@ nextQBtn.addEventListener('click', function(){
 
 loadQuestion(rand);
 loadChoices(rand);
+
+// presentation
+var welcomePage = getElement('.welcomePage');
+var enterGameBtn = getElement('.sumbitBtn');
+enterGameBtn.addEventListener('click', function(){
+  welcomePage.style.display = 'none';
+  gamePage.style.display = 'block';
+})
