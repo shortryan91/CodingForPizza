@@ -20,9 +20,54 @@ var questions = [{
   choices:['1990', '1985','2000', '1995'],
   answer: '1990'
 },{
-  question:'what should be the first tag in any HTML document',
+  question:'what should be the first tag in any HTML document?',
   choices:['<head>','<html>','<body>','<title>'],
   answer: '<html>'
+}, {
+  question:'Which of the following is not a browser ? ',
+  choices:['Microsofts Bing','Netscape Navigator','Mozilla Firefox','Opera'],
+  answer:'Microsofts Bing',
+},{
+  question:'Which type of error is caused when code is executed but there are undesired results?',
+  choices:['Runtime error','Browser error','Syntax error','Logic error'],
+  answer:'Logic error'
+},{
+  question: 'which of these Math. methods returns the value rounded up to the nearest integer?',
+  choices:['Math.floor()','Math.random()','Math.ceil()','Math.round()'],
+  answer:'Math.ceil()'
+},{
+  question:'which of these is not a reserved word in Javascript?',
+  choices: ['debugger','null','break',
+'broke'],
+  answer: 'broke'
+},{
+  question:'pick the html tag that uses .value instead of .textContent when getting the text in the DOM?',
+  choices:['<input>','<h1>','<p>','<form>'],
+  answer:'<input>'
+},{
+  question:'which of these is not a click event?',
+  choices:['onmouseover','onmouseout','onclick','onmouseleft'],
+  answer:'onmouseleft'
+},{
+  question:'in CSS which of these dont belong',
+  choices:['block','grid','inline','list'],
+  answer:'list'
+},{
+  question:'which of these is not a way to collect an item from the DOM?',
+  choices: ['getElementById','getElementsById','getElementsByTagName','getElementsByClassName'],
+  answer:'getElementsById'
+},{
+  question:'which of these characters are not allowed to be used to start a var name in Javascript',
+  choices:['_','$','1','#'],
+  answer:'#'
+},{
+  question:'nearly everything in Ruby is condsidered a what?',
+  choices:['variable','object','function','proc'],
+  answer:'object'
+},{
+  question:'because Ruby is an interpreted language, it means that a source code complied and executed at what?',
+  choices:['Runtime','After Lunch','Before','later'],
+  answer:'Runtime'
 }];
 
 var getElement = function(elem) {
@@ -38,34 +83,56 @@ var currentQuestion = 0;
 var currentPlayer = 'player 1 ';
 var player1Score = 0;
 var player2Score = 0;
-var winningScore = 3;
-
-
+var winningScore = 8;
+// capture all the pages
+var welcomePage = getElement('.welcomePage');
+var gameRulesPage = getElement('.gameRulesPage');
+var contactPage = getElement('.contactpage');
+var loginPage= getElement('.playerInfoPage');
 var gamePage = getElement('#gamePage');
 var winnerPage = getElement('.winnerPage');
+// capturing all buttons
+var enterGameBtn = getElement('.sumbitBtn');
+var loginBtn = getElement('.loginBtn');
+var homeBtn = getElement('#homeBtn');
+var gameRulesBtn = getElement('#gameRulesBtn');
+var contactBtn = getElement('#contactBtn');
+var nextQBtn = getElement('.nextQuestionBtn');
+var resetBtn = getElement('.resetBtn');
+var submitNamesBtn = getElement('#submitPlayerBtn');
+// text area elements
 var questionArea = getElement('.question');
 var answerBoxes = getAllElements('.answer');
-var nextQBtn = getElement('.nextQuestionBtn');
+var winnersName = getElement('#winnerPlayer');
+var gameHeading = getElement('.gamePageHeading');
 // grabs the values of the players id's
 var player1Name = getElement('#player1').textContent;
 var player2Name = getElement('#player2').textContent;
 // grabs the 0 in each players box for scoring
 var player1Count = getElement('#player1Score');
 var player2Count = getElement('#player2Score');
+// login in page inputs
+var newPlayer1name = getElement('#newPlayer1');
+var newPlayer2name = getElement('#newPlayer2');
 
+submitNamesBtn.addEventListener('click', function(){
+first = newPlayer1name.value
+player1Name.textContent = first
+
+});
 
 
 
 var switchPlayer = function() {
   if(player1Name === currentPlayer) {
     currentPlayer = player2Name;
-    // console.log('player 2')
   } else if (currentPlayer === player2Name){
     currentPlayer = player1Name;
-    // console.log('player 1')
   }
   return currentPlayer;
 };
+
+// show whos turn on game screen
 
 
 var gameScores = function() {
@@ -120,17 +187,17 @@ var nextQuestion = function(questionIndex) {
   var choiceSelected = getElement('.selected').textContent;
   var currentAnswer = questions[questionIndex].answer
   if(currentAnswer === choiceSelected) {
-
     gameScores();
     winner();
     switchPlayer();
+    gameHeading.textContent = currentPlayer
     captureQuestions(questionIndex);
     questionIndex = genRand();
     loadQuestion(questionIndex);
     loadChoices(questionIndex);
   } else if (currentAnswer !== choiceSelected){
     switchPlayer();
-
+    gameHeading.textContent = currentPlayer
   }
   return questionIndex;
 }
@@ -141,10 +208,12 @@ var winner = function() {
     // display the winner screen for player 1
     gamePage.style.display = 'none';
     winnerPage.style.display = 'block';
+    winnersName.textContent = currentPlayer;
   } else if (player2Score === winningScore) {
     // display the winner screen for player 2
     gamePage.style.display = 'none';
     winnerPage.style.display = 'block';
+    winnersName.textContent = currentPlayer;
   }
 }
 
@@ -155,16 +224,63 @@ nextQBtn.addEventListener('click', function(){
 // pass nextQuestion inside that function
 
   rand = nextQuestion(rand)
-
 });
 
+// here to load the first question in the game
 loadQuestion(rand);
 loadChoices(rand);
 
 // presentation
+// all pages captured
 var welcomePage = getElement('.welcomePage');
+var gameRulesPage = getElement('.gameRulesPage');
+var contactPage = getElement('.contactpage');
+var loginPage= getElement('.playerInfoPage');
+
 var enterGameBtn = getElement('.sumbitBtn');
+
 enterGameBtn.addEventListener('click', function(){
   welcomePage.style.display = 'none';
   gamePage.style.display = 'block';
+});
+
+homeBtn.addEventListener('click', function(){
+  welcomePage.style.display = "block";
+  gamePage.style.display = 'none';
+  contactPage.style.display = 'none';
+  gameRulesPage.style.display = 'none';
+  winnerPage.style.display = 'none';
+  loginPage.style.display = 'none';
+});
+
+contactBtn.addEventListener('click', function(){
+  contactPage.style.display = 'block';
+  welcomePage.style.display = "none";
+  gamePage.style.display = 'none';
+  gameRulesPage.style.display = 'none';
+  winnerPage.style.display = 'none';
+  loginPage.style.display = "none";
+});
+
+gameRulesBtn.addEventListener('click', function(){
+  gameRulesPage.style.display = 'block';
+  gamePage.style.display = 'none';
+  welcomePage.style.display = "none";
+  contactPage.style.display = 'none';
+  winnerPage.style.display = 'none';
+  loginPage.style.display = 'none';
+});
+
+loginBtn.addEventListener('click', function(){
+  loginPage.style.display = 'block';
+  gameRulesPage.style.display = 'none';
+  gamePage.style.display = 'none';
+  welcomePage.style.display = "none";
+  contactPage.style.display = 'none';
+  winnerPage.style.display = 'none';
+});
+
+
+resetBtn.addEventListener('click', function(){
+  window.location.reload();
 })

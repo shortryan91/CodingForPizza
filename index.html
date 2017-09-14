@@ -4,23 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Coding for pizza</title>
-    <!-- <link rel="stylesheet" href="CSS/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
-      <h1 id="navHeading">Coding For PIZZA</h1>
+      <h1 id="navHeading">Coding For <span class="pizza">PIZZA</span></h1>
       <nav class="navBar">
         <ul>
-        <li>Home</li>
-        <li>GameRules</li>
-        <li>Contact</li>
+        <li id='homeBtn'>Home</li>
+        <li id='gameRulesBtn'>GameRules</li>
+        <li id='contactBtn'>Contact</li>
       </ul>
      </nav>
+     <div id='pizzaBox'>
+       <img id='pizzaSlice' src="img/pizza-slice.png" alt="pizza-slice">
+     </div>
    </header>
    <div class="mainpage">
      <!--  Welcome page-->
     <section class="welcomePage">
+      <div id="gameIntroBox">
+      <p id="gameIntro">Welcome to Coding for <span class="pizza">PIZZA</span>,<br />In a world where everyone has become a web developer the amount of meetups can no long feed the starving web dev population.<br /> So now to survive you must use you skills as a Web Developer and code your way to victory agasint others to win the most precise of prizes in this world the FREE PIZZA!</p>
+    </div>
       <button class="loginBtn" type="button" name="button">Login</button>
       <button class="sumbitBtn" type="button" name="button">Enter Game</button>
     </section>
@@ -30,10 +37,10 @@
     <div class="playerInfoPage">
       <h1 id="PlayerInfoHeading">Enter your infomation</h1>
       <div class="playerInfoBox">
-        <p>player 1</p>
-        <input type="text" name="" value="">
-        <p>player 2</p>
-        <input type="text">
+        <p class="newPlayer">player 1</p>
+        <input id="newPlayer1" type="text" placeholder="enter your name">
+        <p class="newPlayer">player 2</p>
+        <input id="newPlayer2" type="text" placeholder="enter your name">
         <button id="submitPlayerBtn">Submit Players</button>
       </div>
     </div>
@@ -43,23 +50,40 @@
     <div class="gameRulesPage">
       <h1 class="gameRulesHeading">Game Rules</h1>
       <section class="gameRulesBox">
-        <p></p>
+        <p id="gameInfo">
+          ##Game Rules <br />
+          <br />
+          -This is a competition for Web Developers to win the ultimate prize in the tech world a free pizza<br />
+            <br />
+          - Each player will be asked a Question<br />
+            <br />
+          - Each player will be given 10 Seconds to answer there question<br />
+          <br />
+           - If answered correctly then the player will receive 1 point.<br />
+           <br />
+           - If the player guesses incorrectly then the opponent will have the chance to take the point<br />
+            <br />
+           - Points are not deducted for wrong answers<br />
+            <br />
+           - The first person to 8 points (slices) will be declared the winner<br />
+            <br />
+        </p>
       </section>
     </div>
     <!-- end of game Rules -->
 
     <!-- start of the game Page -->
       <div id="gamePage">
-        <h1>LET'S PLAY</h1>
-        <div class="nameBox">
+        <h1 class="gamePageHeading">LET'S PLAY !</h1>
+        <div class="nameBox1">
           <p id="player1">player 1 </p><p>:
           <span id="player1Score">0</span> slices</p>
         </div>
-        <div class="nameBox">
+        <div class="nameBox2">
           <p id="player2">player 2</p><p> :
           <span id="player2Score">0</span> slices</p>
         </div>
-        <!-- <div id="countdown">10</div> -->
+        <button class="nextQuestionBtn">next Question</button>
         <div class="questionContainer">
           <p class="question"></p>
         </div>
@@ -70,17 +94,18 @@
             <li class="answer">s</li>
             <li class="answer">s</li>
           </ul>
-            <button class="nextQuestionBtn">next Question</button>
         </div>
       </div>
     <!-- end of the game page-->
 
     <!-- start of winner Page  -->
       <div class="winnerPage">
-        <h1 class="winnerHeading">WINNER</h1>
-        <h3>Wins the Pizza!</h3>
-        <div>
-          <img src="" alt="pizza">
+        <h1 class="winnerHeading">THE WINNER IS</h1>
+        <p id='winnerPlayer'>s</p>
+
+        <button class="resetBtn">reset</button>
+        <div id="winnerImgBox">
+          <img id="winnerPizza" src="img/pizza-cartoon.png" alt="pizza">
         </div>
       </div>
     <!-- End of winner page -->
@@ -88,17 +113,17 @@
   <!-- start contact page  -->
     <div class="contactpage">
       <h1 class="contactHeading">Contact</h1>
-      <ul class="meadiaTitles">
+      <ul class="mediaTitles">
         <li>Facebook</li>
         <li>Twitter</li>
         <li>Linkedin</li>
         <li>instagram</li>
       </ul>
       <ul class="social">
-  		<li><a href="#"><i class="fa fa-facebook" target="_blank"></i></a></li>
-			<li><a href="#"><i class="fa fa-twitter" target="_blank"></i></a></li>
-			<li><a href="#"><i class="fa fa-linkedin" target="_blank"></i></a></li>
-			<li><a href="#"><i class="fa fa-instagram" target="_blank"></i></a></li>
+  		<li><a class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook fa-5x" target="_blank"></i></a></li>
+			<li><a class="twitter" href="https://twitter.com"><i class="fa fa-twitter fa-5x" target="_blank"></i></a></li>
+			<li><a class="linkedin" href="https://www.linkedin.com/"><i class="fa fa-linkedin fa-5x" target="_blank"></i></a></li>
+			<li><a class="instagram" href="https://www.instagram.com"><i class="fa fa-instagram fa-5x" target="_blank"></i></a></li>
 	</ul>
     </div>
     <!-- end contact page -->
