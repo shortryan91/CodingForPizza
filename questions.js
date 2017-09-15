@@ -25,7 +25,7 @@ var questions = [{
 }, {
   question:'Which of the following is not a browser ? ',
   choices:['Microsofts Bing','Netscape Navigator','Mozilla Firefox','Opera'],
-  answer:'Microsofts Bing',
+  answer:'Microsofts Bing'
 },{
   question:'Which type of error is caused when code is executed but there are undesired results?',
   choices:['Runtime error','Browser error','Syntax error','Logic error'],
@@ -70,33 +70,33 @@ var questions = [{
 }, {
   question:'which of these is not a primitive?',
   choices: ['string','number','array','boolean'],
-  answer: 'array',
+  answer: 'array'
 }, {
   question:'which of of these is not a correct syntax in Javascript?',
   choices: ['==','>=','<=','=<'],
-  answer: '=<',
+  answer: '=<'
 }, {
   question:'which od these is not classed as a scope in Ruby',
   choices: ['global','class','local','instant'],
-  answer: 'instant',
+  answer: 'instant'
 }, {
   question:'which of theses has the incorrect Syntax?',
   choices: ['createElement()','createTextsNode()','appendChild()','removeChild()'],
-  answer: 'createTextsNode()',
+  answer: 'createTextsNode()'
 }, {
   question:'which is not a loop in Javascript?',
   choices: ['for','each','while','do while'],
-  answer: 'each',
+  answer: 'each'
 }, {
   question:'which of these is not a basic box property in CSS',
   choices: ['left','top','up','float'],
-  answer: 'up',
+  answer: 'up'
 }, {
   question:'To specifies a fonts boldness in CSS you use Font-what?',
   choices: ['bold','weight','style','family'],
-  answer: 'bold',
+  answer: 'bold'
 }, {
-  question:'which of these is not a valid cursor property?'
+  question:'which of these is not a valid cursor property?',
   choices: ['not-allowed','no-drop','crosshair','no-target'],
   answer: 'no-target'
 }
