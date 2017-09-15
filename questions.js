@@ -99,5 +99,4 @@ var questions = [{
   question:'which of these is not a valid cursor property?',
   choices: ['not-allowed','no-drop','crosshair','no-target'],
   answer: 'no-target'
-}
-];
+}];
