@@ -101,6 +101,12 @@ nav ul li:hover {
    margin-top: 2%;
    border-radius: 50%;
    padding: 15px;
+   transition: 1s;
+ }
+
+ .loginBtn:hover {
+   color: #e53232;
+   background-color: black;
  }
 
 .sumbitBtn {
@@ -110,6 +116,12 @@ nav ul li:hover {
   margin-left: 20%;
   border-radius: 50%;
   padding: 15px;
+  transition: 1s;
+}
+
+.sumbitBtn:hover {
+  color: #e53232;
+  background-color: black;
 }
 
 /*end of welcome page*/
@@ -186,6 +198,12 @@ nav ul li:hover {
   color: black;
   background-color: white;
   border-radius: 6px;
+  transition: 1s;
+}
+
+.nextQuestionBtn:hover {
+  color: #e53232;
+  background-color: black;
 }
 
 .questionContainer {
@@ -217,6 +235,12 @@ nav ul li:hover {
   list-style: none;
   text-align: center;
   font-size: 30px;
+  transition: 1s;
+}
+
+.answer:hover{
+  color: #e53232;
+  background-color: black;
 }
 
 #countdown {
@@ -277,8 +301,13 @@ nav ul li:hover {
   background-color: black;
   border-radius: 5px;
   margin-left: 100px;
+  transition: 1s;
 }
 
+#submitPlayerBtn:hover {
+  color: #e53232;
+  background-color: black;
+}
 
 /*end of player info page*/
 
@@ -353,6 +382,12 @@ nav ul li:hover {
   font-family: 'Russo One', sans-serif;
   border-radius: 15px;
   margin-left: 20px;
+  transition: 1s;
+}
+
+.resetBtn:hover {
+  color: #e53232;
+  background-color: black;
 }
 
 #winnerPlayer {
@@ -410,6 +445,11 @@ nav ul li:hover {
   font-family: 'Russo One', sans-serif;
   border-radius: 15px;
   margin-left: 20px;
+  transition: 1s;
 }
 
+.backToGameBtn:hover {
+  color: #e53232;
+  background-color: black;
+}
 /*end of game rules*/
