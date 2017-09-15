@@ -94,7 +94,7 @@ var questions = [{
 }, {
   question:'To specifies a fonts boldness in CSS you use Font-what?',
   choices: ['bold','weight','style','family'],
-  answer: 'bold'
+  answer: 'weight'
 }, {
   question:'which of these is not a valid cursor property?',
   choices: ['not-allowed','no-drop','crosshair','no-target'],
