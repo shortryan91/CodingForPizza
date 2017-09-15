@@ -4,7 +4,7 @@ var questions = [{
   choices:['Ruby','Javascript','Python','C++'],
   answer: 'Ruby'
 },{
-  question:'In Javascript how would you turn the word hello into an array of strings? ',
+  question:'In Javascript how would you turn the word hello into an array of a string? ',
   choices: ['split()','pop()','slice()','push()'],
   answer: 'split()'
 },{
@@ -49,7 +49,7 @@ var questions = [{
   choices:['onmouseover','onmouseout','onclick','onmouseleft'],
   answer:'onmouseleft'
 },{
-  question:'in CSS which of these dont belong',
+  question:'in CSS which of these dont belong to the display property?',
   choices:['block','grid','inline','list'],
   answer:'list'
 },{
@@ -57,7 +57,7 @@ var questions = [{
   choices: ['getElementById','getElementsById','getElementsByTagName','getElementsByClassName'],
   answer:'getElementsById'
 },{
-  question:'which of these characters are not allowed to be used to start a var name in Javascript',
+  question:'which of these characters are not allowed to be used to start a variable name in Javascript',
   choices:['_','$','1','#'],
   answer:'#'
 },{
@@ -74,6 +74,7 @@ var getElement = function(elem) {
   var element = document.querySelector(elem);
   return element;
 }
+
 var getAllElements = function(elements) {
   var elements = document.querySelectorAll(elements);
   return elements;
@@ -100,6 +101,7 @@ var contactBtn = getElement('#contactBtn');
 var nextQBtn = getElement('.nextQuestionBtn');
 var resetBtn = getElement('.resetBtn');
 var submitNamesBtn = getElement('#submitPlayerBtn');
+var backToGameBtn = getElement('.backToGameBtn');
 // text area elements
 var questionArea = getElement('.question');
 var answerBoxes = getAllElements('.answer');
@@ -114,13 +116,8 @@ var player2Count = getElement('#player2Score');
 // login in page inputs
 var newPlayer1name = getElement('#newPlayer1');
 var newPlayer2name = getElement('#newPlayer2');
-
-submitNamesBtn.addEventListener('click', function(){
-first = newPlayer1name.value
-player1Name.textContent = first
-
-});
-
+var enteredName1 = getElement('.name1');
+var enteredName2 = getElement('.name2')
 
 
 var switchPlayer = function() {
@@ -136,12 +133,12 @@ var switchPlayer = function() {
 
 
 var gameScores = function() {
-  if (currentPlayer === player1Name){
-  player1Score ++;
-  player1Count.textContent = player1Score;
+  if (currentPlayer === player1Name) {
+    player1Score ++;
+    player1Count.textContent = player1Score;
   } else if (currentPlayer === player2Name) {
-  player2Score ++;
-  player2Count.textContent = player2Score;
+    player2Score ++;
+    player2Count.textContent = player2Score;
   }
 }
 
@@ -156,7 +153,7 @@ var captureQuestions = function(randomNumber) {
   // splicing out the object from the questions array.
   var questionObject = questions.splice(randomNumber,1)
   // push the item item to the new array.
-    usedQuestions.push(questionObject);
+  usedQuestions.push(questionObject);
 }
 
 var loadQuestion = function(randomNumber) {
@@ -167,17 +164,17 @@ var loadQuestion = function(randomNumber) {
 
 var loadChoices = function(questionIndex) {
   var options = questions[questionIndex].choices;
-    answerBoxes.forEach(function(elem, index){
-      elem.textContent = options[index];
-      elem.addEventListener('click', function(){
+  answerBoxes.forEach(function(elem, index) {
+    elem.textContent = options[index];
+    elem.addEventListener('click', function(){
         // clear all selected
-        answerBoxes.forEach(function(li) {
-          li.classList.remove('selected');
-        });
-        // select one i click
-        elem.classList.add('selected');
+      answerBoxes.forEach(function(li) {
+        li.classList.remove('selected');
       });
+        // select one i click
+      elem.classList.add('selected');
     });
+  });
 }
 
 
@@ -222,7 +219,6 @@ var rand = genRand();
 // addEventListener for next button
 nextQBtn.addEventListener('click', function(){
 // pass nextQuestion inside that function
-
   rand = nextQuestion(rand)
 });
 
@@ -239,12 +235,12 @@ var loginPage= getElement('.playerInfoPage');
 
 var enterGameBtn = getElement('.sumbitBtn');
 
-enterGameBtn.addEventListener('click', function(){
+enterGameBtn.addEventListener('click', function() {
   welcomePage.style.display = 'none';
   gamePage.style.display = 'block';
 });
 
-homeBtn.addEventListener('click', function(){
+homeBtn.addEventListener('click', function() {
   welcomePage.style.display = "block";
   gamePage.style.display = 'none';
   contactPage.style.display = 'none';
@@ -253,7 +249,7 @@ homeBtn.addEventListener('click', function(){
   loginPage.style.display = 'none';
 });
 
-contactBtn.addEventListener('click', function(){
+contactBtn.addEventListener('click', function() {
   contactPage.style.display = 'block';
   welcomePage.style.display = "none";
   gamePage.style.display = 'none';
@@ -262,7 +258,7 @@ contactBtn.addEventListener('click', function(){
   loginPage.style.display = "none";
 });
 
-gameRulesBtn.addEventListener('click', function(){
+gameRulesBtn.addEventListener('click', function() {
   gameRulesPage.style.display = 'block';
   gamePage.style.display = 'none';
   welcomePage.style.display = "none";
@@ -271,7 +267,7 @@ gameRulesBtn.addEventListener('click', function(){
   loginPage.style.display = 'none';
 });
 
-loginBtn.addEventListener('click', function(){
+loginBtn.addEventListener('click', function() {
   loginPage.style.display = 'block';
   gameRulesPage.style.display = 'none';
   gamePage.style.display = 'none';
@@ -281,6 +277,24 @@ loginBtn.addEventListener('click', function(){
 });
 
 
-resetBtn.addEventListener('click', function(){
+resetBtn.addEventListener('click', function() {
   window.location.reload();
 })
+
+backToGameBtn.addEventListener('click', function() {
+  gamePage.style.display = 'block';
+  welcomePage.style.display = "none";
+  contactPage.style.display = 'none';
+  gameRulesPage.style.display = 'none';
+  winnerPage.style.display = 'none';
+  loginPage.style.display = 'none';
+})
+
+submitNamesBtn.addEventListener('click', function() {
+  firstPlayer = newPlayer1name.value
+  enteredName1.textContent = firstPlayer;
+  secondPlayer = newPlayer2name.value
+  enteredName2.textContent  = secondPlayer;
+  loginPage.style.display = 'none';
+  gamePage.style.display = 'block';
+});

@@ -12,12 +12,10 @@ p{
 .selected {
   color: green;
   border: 2px solid green;
-
 }
 
 .mainpage {
   background-color: #b7a79c;
-
 }
 
 /*header*/
@@ -34,16 +32,16 @@ header {
   font-size: 45px;
   text-shadow: 1px 1px 1px black;
 }
- .pizza{
-   color: #e53232;
-   text-shadow: 1px 1px 1px black;
- }
+
+.pizza{
+  color: #e53232;
+  text-shadow: 1px 1px 1px black;
+}
 
 .navBar {
   display: inline-block;
   width: 40%;
   height: 50px;
-
 }
 
 nav ul li {
@@ -76,6 +74,7 @@ nav ul li:hover {
 /*end of header*/
 
 /*welcome page*/
+
 .welcomePage {
   display: block;
   height: 500px;
@@ -116,6 +115,7 @@ nav ul li:hover {
 /*end of welcome page*/
 
 /*start game page*/
+
 #gamePage {
   display: none;
   width: 95%;
@@ -149,6 +149,12 @@ nav ul li:hover {
   text-shadow: 1px 1px 1px black;
 }
 
+.name1 {
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
+  font-size: 30px;
+}
+
 .nameBox2 {
   display: inline-block;
   border: 2px solid black;
@@ -156,9 +162,7 @@ nav ul li:hover {
   background-color: #a06c46;
   border-radius: 7px;
   text-align: center;
-
 }
-
 
  #player2 {
   display: inline-block;
@@ -166,6 +170,12 @@ nav ul li:hover {
   text-align: center;
   color: #fff;
   text-shadow: 1px 1px 1px black;
+}
+
+.name2 {
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
+  font-size: 30px;
 }
 
 .nextQuestionBtn {
@@ -177,7 +187,6 @@ nav ul li:hover {
   background-color: white;
   border-radius: 6px;
 }
-
 
 .questionContainer {
   border: 2px solid white;
@@ -194,16 +203,14 @@ nav ul li:hover {
   margin-left: 30px;
   font-size: 25px;
 }
+
  #possibe {
   display: inline-block;
   width: 40%;
-  /*border: 2px solid white;*/
-  /*background-color: white;*/
   vertical-align: top;
 }
 
 .answer {
-  /*border: 2px solid black;*/
   margin-bottom: 7px;
   border-radius: 6px;
   background-color: white;
@@ -219,11 +226,10 @@ nav ul li:hover {
 }
 
 
-
-
 /*end game page*/
 
 /*player info page*/
+
 .playerInfoPage {
   display: none;
   height: 500px;
@@ -244,7 +250,6 @@ nav ul li:hover {
   background-color: white;
   width: 80%;
   margin-left: 20px;
-
 }
 
 .newPlayer {
@@ -256,7 +261,6 @@ nav ul li:hover {
   font-size: 20px;
   margin-left: 30px;
   font-family: 'Russo One', sans-serif;
-
 }
 
 #newPlayer2{
@@ -276,10 +280,10 @@ nav ul li:hover {
 }
 
 
-
 /*end of player info page*/
 
-/*concat page*/
+/*contact page*/
+
 .contactpage {
   display: none;
   height: 400px;
@@ -329,6 +333,7 @@ nav ul li:hover {
 /*end of contact page*/
 
 /*winner page*/
+
 .winnerPage {
   display: none;
 }
@@ -347,7 +352,7 @@ nav ul li:hover {
   font-size: 55px;
   font-family: 'Russo One', sans-serif;
   border-radius: 15px;
-margin-left: 20px;
+  margin-left: 20px;
 }
 
 #winnerPlayer {
@@ -356,7 +361,6 @@ margin-left: 20px;
   color: #fff;
   text-shadow: 1px 1px 1px black;
   font-size: 55px;
-
 }
 
 #winnerImgBox{
@@ -374,6 +378,7 @@ margin-left: 20px;
 /*end of winner page*/
 
 /*game rules*/
+
 .gameRulesPage{
   display: none;
   height: 800px;
@@ -395,8 +400,16 @@ margin-left: 20px;
   margin-bottom: 20px;
 }
 
-
 #gameInfo {
   margin-left: 20px;
 }
+
+.backToGameBtn {
+  display: inline-block;
+  font-size: 55px;
+  font-family: 'Russo One', sans-serif;
+  border-radius: 15px;
+  margin-left: 20px;
+}
+
 /*end of game rules*/

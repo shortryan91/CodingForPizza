@@ -1,5 +1,5 @@
 
-#Coding for Pizza Game
+# Coding for Pizza Game
 
 Welcome to Coding for PIZZA   
 In a world where everyone has become a web developer the amount of meetups can no long feed the starving web dev population.   
@@ -7,17 +7,18 @@ In a world where everyone has become a web developer the amount of meetups can n
   FREE PIZZA!
 
 
-#link to the game   
+# link to the game   
 
 https://shortryan91.github.io/CodingForPizza/.   
-##languages
+  
+## languages
 
 to build this game the languages used were    
  - HTML   
  - CSS    
  - Javascript    
 
-##Game Rules    
+## Game Rules    
 
 -This is a competition for Web Developers to win the ultimate prize in the tech world a free pizza    
 

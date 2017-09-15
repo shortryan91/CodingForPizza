@@ -10,24 +10,26 @@
   </head>
   <body>
     <header>
-      <h1 id="navHeading">Coding For <span class="pizza">PIZZA</span></h1>
-      <nav class="navBar">
+        <h1 id="navHeading">Coding For <span class="pizza">PIZZA</span></h1>
+        <nav class="navBar">
         <ul>
-        <li id='homeBtn'>Home</li>
-        <li id='gameRulesBtn'>GameRules</li>
-        <li id='contactBtn'>Contact</li>
-      </ul>
-     </nav>
-     <div id='pizzaBox'>
-       <img id='pizzaSlice' src="img/pizza-slice.png" alt="pizza-slice">
-     </div>
-   </header>
+          <li id='homeBtn'>Home</li>
+          <li id='gameRulesBtn'>GameRules</li>
+          <li id='contactBtn'>Contact</li>
+        </ul>
+       </nav>
+       <div id='pizzaBox'>
+         <img id='pizzaSlice' src="img/pizza-slice.png" alt="pizza-slice">
+       </div>
+    </header>
    <div class="mainpage">
+
      <!--  Welcome page-->
+
     <section class="welcomePage">
       <div id="gameIntroBox">
-      <p id="gameIntro">Welcome to Coding for <span class="pizza">PIZZA</span>,<br />In a world where everyone has become a web developer the amount of meetups can no long feed the starving web dev population.<br /> So now to survive you must use you skills as a Web Developer and code your way to victory against others to win the most Precious of prizes in this world the FREE PIZZA!</p>
-    </div>
+        <p id="gameIntro">Welcome to Coding for <span class="pizza">PIZZA</span>,<br />In a world where everyone has become a web developer the amount of meetups can no long feed the starving web dev population.<br /> So now to survive you must use you skills as a Web Developer and code your way to victory against others to win the most Precious of prizes in this world the FREE PIZZA!</p>
+      </div>
       <button class="loginBtn" type="button" name="button">Login</button>
       <button class="sumbitBtn" type="button" name="button">Enter Game</button>
     </section>
@@ -69,24 +71,26 @@
             <br />
         </p>
       </section>
+
+      <button class="backToGameBtn">Back to Game</button>
     </div>
     <!-- end of game Rules -->
 
     <!-- start of the game Page -->
-      <div id="gamePage">
-        <h1 class="gamePageHeading">LET'S PLAY !</h1>
-        <div class="nameBox1">
-          <p id="player1">player 1 </p><p>:
-          <span id="player1Score">0</span> slices</p>
-        </div>
-        <div class="nameBox2">
-          <p id="player2">player 2</p><p> :
-          <span id="player2Score">0</span> slices</p>
-        </div>
-        <button class="nextQuestionBtn">next Question</button>
-        <div class="questionContainer">
-          <p class="question"></p>
-        </div>
+    <div id="gamePage">
+      <h1 class="gamePageHeading">LET'S PLAY !</h1>
+      <div class="nameBox1">
+        <p id="player1">player 1 </p><p class="name1"></p>
+        <p>:<span id="player1Score">0</span> slices</p>
+      </div>
+      <div class="nameBox2">
+        <p id="player2">player 2</p><p class="name2"></p>
+        <p> :<span id="player2Score">0</span> slices</p>
+      </div>
+      <button class="nextQuestionBtn">next Question</button>
+      <div class="questionContainer">
+        <p class="question"></p>
+      </div>
         <div id="possibe">
           <ul class="answers">
             <li class="answer">s</li>
@@ -102,7 +106,6 @@
       <div class="winnerPage">
         <h1 class="winnerHeading">THE WINNER IS</h1>
         <p id='winnerPlayer'>s</p>
-
         <button class="resetBtn">reset</button>
         <div id="winnerImgBox">
           <img id="winnerPizza" src="img/pizza-cartoon.png" alt="pizza">
@@ -120,15 +123,15 @@
         <li>instagram</li>
       </ul>
       <ul class="social">
-  		<li><a class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook fa-5x" target="_blank"></i></a></li>
-			<li><a class="twitter" href="https://twitter.com"><i class="fa fa-twitter fa-5x" target="_blank"></i></a></li>
-			<li><a class="linkedin" href="https://www.linkedin.com/"><i class="fa fa-linkedin fa-5x" target="_blank"></i></a></li>
-			<li><a class="instagram" href="https://www.instagram.com"><i class="fa fa-instagram fa-5x" target="_blank"></i></a></li>
-	</ul>
+    		<li><a class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook fa-5x" target="_blank"></i></a></li>
+  			<li><a class="twitter" href="https://twitter.com"><i class="fa fa-twitter fa-5x" target="_blank"></i></a></li>
+  			<li><a class="linkedin" href="https://www.linkedin.com/"><i class="fa fa-linkedin fa-5x" target="_blank"></i></a></li>
+  			<li><a class="instagram" href="https://www.instagram.com"><i class="fa fa-instagram fa-5x" target="_blank"></i></a></li>
+  	  </ul>
     </div>
     <!-- end contact page -->
-    <!-- <script type="text/javascript" src="main.js"></script> -->
+
     <script src="native.js"></script>
-    </div>
+   </div>
   </body>
 </html>
